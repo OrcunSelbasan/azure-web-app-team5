@@ -11,5 +11,6 @@ namespace Employee.Data
         {
         }
         public DbSet<Employee.Models.Emp> Emp { get; set; }
+        public DbSet<Employee.Models.tblEmployee> tblEmployee { get; set; }
     }
 }
