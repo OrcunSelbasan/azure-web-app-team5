@@ -58,6 +58,9 @@ namespace Employee.Controllers
         {
             if (ModelState.IsValid)
             {
+                List<tblEmployee> tblEmployees = (await _context.tblEmployee.ToListAsync());
+                Random rand = new Random();
+                tblEmployee.Id = rand.Next();
                 _context.Add(tblEmployee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
